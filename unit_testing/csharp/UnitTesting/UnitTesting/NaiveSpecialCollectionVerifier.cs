@@ -10,7 +10,7 @@ namespace UnitTesting
     {
         public static void Main(string[] args)
         {
-            SpecialCollection sc = new SpecialCollection(SortingStrategy.RemoveDuplicates);
+            var sc = new SpecialCollection(SortingStrategy.NoDuplicates);
             sc.Add(new List<string> { "CCC", "AAA", "BBB", "AAA" });
             foreach (var s in sc.Sort())
             {

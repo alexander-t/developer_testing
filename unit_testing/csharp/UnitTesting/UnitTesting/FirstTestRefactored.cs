@@ -10,7 +10,7 @@ namespace UnitTesting
     {
         public static void Main(string[] args)
         {
-            SpecialCollectionTests tests = new SpecialCollectionTests();
+            var tests = new SpecialCollectionTests();
             tests.SetUp();
             tests.NullArgument();
 
@@ -36,7 +36,7 @@ namespace UnitTesting
         private SpecialCollection sc;
         public void SetUp()
         {
-            sc = new SpecialCollection(SortingStrategy.RemoveDuplicates);
+            sc = new SpecialCollection(SortingStrategy.NoDuplicates);
         }
 
         public void NullArgument()
@@ -79,7 +79,8 @@ namespace UnitTesting
         public void ThreeUnsortedItems()
         {
             sc.Add(new List<string> { "BBB", "AAA", "CCC" });
-            if (!new List<string> { "AAA", "BBB", "CCC" }.SequenceEqual(sc.Sort()))
+            if (!new List<string> { "AAA", "BBB", "CCC" }
+                .SequenceEqual(sc.Sort()))
             {
                 Console.WriteLine("Fails for BBB AAA CCC");
             }
@@ -88,7 +89,8 @@ namespace UnitTesting
         public void UnsortedAndIdenticalItems()
         {
             sc.Add(new List<string> { "CCC", "AAA", "BBB", "AAA" });
-            if (!new List<string> { "AAA", "BBB", "CCC" }.SequenceEqual(sc.Sort()))
+            if (!new List<string> { "AAA", "BBB", "CCC" }
+                .SequenceEqual(sc.Sort()))
             {
                 Console.WriteLine("Fails for CCC AAA BBB AAA");
             }

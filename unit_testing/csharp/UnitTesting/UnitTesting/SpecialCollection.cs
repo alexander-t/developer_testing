@@ -31,6 +31,6 @@ namespace UnitTesting
 
     public enum SortingStrategy
     {
-        RemoveDuplicates
+        NoDuplicates
     }
 }

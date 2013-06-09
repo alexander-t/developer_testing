@@ -30,7 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>UnitTesting.FirstTestRefactored</StartupObject>
+    <StartupObject>UnitTesting.NaiveSpecialCollectionVerifier</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
