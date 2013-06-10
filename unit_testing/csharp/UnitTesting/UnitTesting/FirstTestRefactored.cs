@@ -10,87 +10,87 @@ namespace UnitTesting
     {
         public static void Main(string[] args)
         {
-            var tests = new SpecialCollectionTests();
+            var tests = new WordCounterTests();
             tests.SetUp();
             tests.NullArgument();
 
             tests.SetUp();
-            tests.EmptyCollection();
+            tests.NoWords();
 
             tests.SetUp();
-            tests.OneItem();
+            tests.OneWord();
 
             tests.SetUp();
-            tests.TwoIdenticalItems();
+            tests.TwoIdenticalWords();
 
             tests.SetUp();
-            tests.ThreeUnsortedItems();
+            tests.ThreeDifferentWords();
 
             tests.SetUp();
-            tests.UnsortedAndIdenticalItems();
+            tests.TwoIdenticalAndTwoDifferentWords();
         }
     }
 
-    class SpecialCollectionTests
+    class WordCounterTests
     {
-        private SpecialCollection sc;
+        private WordCounter wc;
         public void SetUp()
         {
-            sc = new SpecialCollection(SortingStrategy.NoDuplicates);
+            wc = new WordCounter();
         }
 
         public void NullArgument()
         {
             try
             {
-                sc.Add(null);
+                wc.Add(null);
                 Console.WriteLine("Fails for argument null");
             }
             catch (ArgumentNullException e) { }
         }
 
-        public void EmptyCollection()
+        public void NoWords()
         {
-            sc.Add(new List<string> { });
-            if (!new List<string> { }.SequenceEqual(sc.Sort()))
+            wc.Add(new List<string> { });
+            if (!new List<string> { }.SequenceEqual(wc.WordCountPairs))
             {
                 Console.WriteLine("Fails for empty list");
             }
         }
 
-        public void OneItem()
+        public void OneWord()
         {
-            sc.Add(new List<string> { "AAA" });
-            if (!new List<string> { "AAA" }.SequenceEqual(sc.Sort()))
+            wc.Add(new List<string> { "AAA" });
+            if (!new List<string> { "AAA:1" }.SequenceEqual(wc.WordCountPairs))
             {
                 Console.WriteLine("Fails for AAA");
             }
         }
 
-        public void TwoIdenticalItems()
+        public void TwoIdenticalWords()
         {
-            sc.Add(new List<string> { "AAA", "AAA" });
-            if (!new List<string> { "AAA" }.SequenceEqual(sc.Sort()))
+            wc.Add(new List<string> { "AAA", "AAA" });
+            if (!new List<string> { "AAA:2" }.SequenceEqual(wc.WordCountPairs))
             {
                 Console.WriteLine("Fails for AAA AAA");
             }
         }
 
-        public void ThreeUnsortedItems()
+        public void ThreeDifferentWords()
         {
-            sc.Add(new List<string> { "BBB", "AAA", "CCC" });
-            if (!new List<string> { "AAA", "BBB", "CCC" }
-                .SequenceEqual(sc.Sort()))
+            wc.Add(new List<string> { "BBB", "AAA", "CCC" });
+            if (!new List<string> { "AAA:1", "BBB:1", "CCC:1" }
+                .SequenceEqual(wc.WordCountPairs))
             {
                 Console.WriteLine("Fails for BBB AAA CCC");
             }
         }
 
-        public void UnsortedAndIdenticalItems()
+        public void TwoIdenticalAndTwoDifferentWords()
         {
-            sc.Add(new List<string> { "CCC", "AAA", "BBB", "AAA" });
-            if (!new List<string> { "AAA", "BBB", "CCC" }
-                .SequenceEqual(sc.Sort()))
+            wc.Add(new List<string> { "CCC", "AAA", "BBB", "AAA" });
+            if (!new List<string> { "AAA:2", "BBB:1", "CCC:1" }
+                .SequenceEqual(wc.WordCountPairs))
             {
                 Console.WriteLine("Fails for CCC AAA BBB AAA");
             }

@@ -10,47 +10,47 @@ namespace UnitTesting
     {
         public static void Main(string[] args)
         {
-            var sc = new SpecialCollection(SortingStrategy.NoDuplicates);
+            var wc = new WordCounter();
             try
             {
-                sc.Add(null);
+                wc.Add(null);
                 Console.WriteLine("Fails for argument null");
             }
             catch (ArgumentNullException e) { }
 
-            sc = new SpecialCollection(SortingStrategy.NoDuplicates);
-            sc.Add(new List<string> { });
-            if (!new List<string> { }.SequenceEqual(sc.Sort()))
+            wc = new WordCounter();
+            wc.Add(new List<string> { });
+            if (!new List<string> { }.SequenceEqual(wc.WordCountPairs))
             {
                 Console.WriteLine("Fails for empty list");
             }
 
-            sc = new SpecialCollection(SortingStrategy.NoDuplicates);
-            sc.Add(new List<string> { "AAA" });
-            if (!new List<string> { "AAA" }.SequenceEqual(sc.Sort()))
+            wc = new WordCounter();
+            wc.Add(new List<string> { "AAA" });
+            if (!new List<string> { "AAA:1" }.SequenceEqual(wc.WordCountPairs))
             {
                 Console.WriteLine("Fails for AAA");
             }
 
-            sc = new SpecialCollection(SortingStrategy.NoDuplicates);
-            sc.Add(new List<string> { "AAA", "AAA" });
-            if (!new List<string> { "AAA" }.SequenceEqual(sc.Sort()))
+            wc = new WordCounter();
+            wc.Add(new List<string> { "AAA", "AAA" });
+            if (!new List<string> { "AAA:2" }.SequenceEqual(wc.WordCountPairs))
             {
                 Console.WriteLine("Fails for AAA AAA");
             }
 
-            sc = new SpecialCollection(SortingStrategy.NoDuplicates);
-            sc.Add(new List<string> { "BBB", "AAA", "CCC" });
-            if (!new List<string> { "AAA", "BBB", "CCC" }
-                .SequenceEqual(sc.Sort()))
+            wc = new WordCounter();
+            wc.Add(new List<string> { "BBB", "AAA", "CCC" });
+            if (!new List<string> { "AAA:1", "BBB:1", "CCC:1" }
+                .SequenceEqual(wc.WordCountPairs))
             {
                 Console.WriteLine("Fails for BBB AAA CCC");
             }
 
-            sc = new SpecialCollection(SortingStrategy.NoDuplicates);
-            sc.Add(new List<string> { "CCC", "AAA", "BBB", "AAA" });
-            if (!new List<string> { "AAA", "BBB", "CCC" }
-                .SequenceEqual(sc.Sort()))
+            wc = new WordCounter();
+            wc.Add(new List<string> { "CCC", "AAA", "BBB", "AAA" });
+            if (!new List<string> { "AAA:2", "BBB:1", "CCC:1" }
+                .SequenceEqual(wc.WordCountPairs))
             {
                 Console.WriteLine("Fails for CCC AAA BBB AAA");
             }
