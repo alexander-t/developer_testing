@@ -20,21 +20,24 @@ namespace UnitTesting
 
             wc = new WordCounter();
             wc.Add(new List<string> { });
-            if (!new List<string> { }.SequenceEqual(wc.WordCountPairs))
+            if (!new List<string> { }
+                .SequenceEqual(wc.WordCountPairs))
             {
                 Console.WriteLine("Fails for empty list");
             }
 
             wc = new WordCounter();
             wc.Add(new List<string> { "AAA" });
-            if (!new List<string> { "AAA:1" }.SequenceEqual(wc.WordCountPairs))
+            if (!new List<string> { "AAA:1" }
+                .SequenceEqual(wc.WordCountPairs))
             {
                 Console.WriteLine("Fails for AAA");
             }
 
             wc = new WordCounter();
             wc.Add(new List<string> { "AAA", "AAA" });
-            if (!new List<string> { "AAA:2" }.SequenceEqual(wc.WordCountPairs))
+            if (!new List<string> { "AAA:2" }
+                .SequenceEqual(wc.WordCountPairs))
             {
                 Console.WriteLine("Fails for AAA AAA");
             }

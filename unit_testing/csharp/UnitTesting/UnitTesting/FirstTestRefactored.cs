@@ -52,7 +52,8 @@ namespace UnitTesting
         public void NoWords()
         {
             wc.Add(new List<string> { });
-            if (!new List<string> { }.SequenceEqual(wc.WordCountPairs))
+            if (!new List<string> { }
+                .SequenceEqual(wc.WordCountPairs))
             {
                 Console.WriteLine("Fails for empty list");
             }
@@ -61,7 +62,8 @@ namespace UnitTesting
         public void OneWord()
         {
             wc.Add(new List<string> { "AAA" });
-            if (!new List<string> { "AAA:1" }.SequenceEqual(wc.WordCountPairs))
+            if (!new List<string> { "AAA:1" }
+                .SequenceEqual(wc.WordCountPairs))
             {
                 Console.WriteLine("Fails for AAA");
             }
@@ -70,7 +72,8 @@ namespace UnitTesting
         public void TwoIdenticalWords()
         {
             wc.Add(new List<string> { "AAA", "AAA" });
-            if (!new List<string> { "AAA:2" }.SequenceEqual(wc.WordCountPairs))
+            if (!new List<string> { "AAA:2" }
+                .SequenceEqual(wc.WordCountPairs))
             {
                 Console.WriteLine("Fails for AAA AAA");
             }
