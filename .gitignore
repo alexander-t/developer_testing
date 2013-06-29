@@ -1,3 +1,8 @@
 bin
 obj
 *.suo
+
+*.gradle
+*.idea
+*.iml
+build
