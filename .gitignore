@@ -1,7 +1,8 @@
 bin
 obj
 *.suo
-
+packagges
+out
 *.gradle
 *.idea
 *.iml
