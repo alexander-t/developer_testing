@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{28C150A0-0AFE-4959-9A6F-7C9C3259AFE9}</ProjectGuid>
+    <ProjectGuid>{55699025-FEB7-4F6E-A024-6253747DB8A5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnitTesting</RootNamespace>
-    <AssemblyName>UnitTesting</AssemblyName>
+    <RootNamespace>UnitTestingNUnitTests</RootNamespace>
+    <AssemblyName>UnitTestingNUnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -29,11 +29,26 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
-  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.core">
+      <HintPath>..\packages\NUnitTestAdapter.0.95.2\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces">
+      <HintPath>..\packages\NUnitTestAdapter.0.95.2\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.util">
+      <HintPath>..\packages\NUnitTestAdapter.0.95.2\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter">
+      <HintPath>..\packages\NUnitTestAdapter.0.95.2\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,14 +58,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity.cs" />
-    <Compile Include="FirstTest.cs" />
-    <Compile Include="FirstTestRefactored.cs" />
-    <Compile Include="NaiveWordCounterTest.cs" />
-    <Compile Include="NameUtils.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="CustomConstraints\CustomAssertions.cs" />
+    <Compile Include="CustomConstraints\IsAdultContraint.cs" />
+    <Compile Include="FluentAssertsTest.cs" />
+    <Compile Include="PersonTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WordCounter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UnitTesting\UnitTesting.csproj">
+      <Project>{28c150a0-0afe-4959-9a6f-7c9c3259afe9}</Project>
+      <Name>UnitTesting</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
