@@ -11,8 +11,9 @@ namespace UnitTestingNUnitTests.CustomConstraints
 {
     public static class Aged
     {
-        public static IsAdultConstraint Adult {
-            get {return new IsAdultConstraint(); } 
+        public static IsAdultConstraint Adult
+        {
+            get { return new IsAdultConstraint(); }
         }
     }
 }

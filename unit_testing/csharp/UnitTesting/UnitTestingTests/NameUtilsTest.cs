@@ -13,16 +13,16 @@ namespace UnitTestingTests
         {
             var adam = new Person {
                 FirstName = "Adam",
-                LastName = "Adamsson",
-                Age = 21};
+                LastName = "Adamsson"
+                };
             var bertil = new Person {
                 FirstName = "Bertil",
-                LastName = "Bertilsson",
-                Age = 22};
+                LastName = "Bertilsson"
+                };
             var cecil = new Person {
                 FirstName = "Cecil",
                 LastName = "Cecilsson",
-                Age = 23};
+                };
 
             var actual = NameUtils.CollectFirstNames(
                 new List<Person>() { adam, bertil, cecil });

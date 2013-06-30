@@ -8,18 +8,24 @@ using UnitTesting;
 
 namespace UnitTestingNUnitTests.CustomConstraints
 {
-    public class IsAdultConstraint : Constraint
+    public class IsSamePersonConstraint : Constraint
     {
+        private Person expected;
+        public IsSamePersonConstraint(Person expected)
+        {
+            this.expected = expected;
+        }
+
         public override void WriteDescriptionTo(MessageWriter writer)
         {
-            writer.Write("a person of age 18 to 65");
+            writer.Write(describePerson(expected));
         }
 
         public override void WriteActualValueTo(MessageWriter writer)
         {
             if (actual is Person)
             {
-                writer.Write("a person aged " + ((Person)actual).Age);
+                writer.Write(describePerson((Person)actual));
             }
             else
             {
@@ -33,9 +39,17 @@ namespace UnitTestingNUnitTests.CustomConstraints
             if (actual is Person)
             {
                 var person = (Person)actual;
-                return person.Age >= 18 && person.Age < 65;
+                return expected.FirstName == person.FirstName
+                    && expected.LastName == person.LastName
+                    && expected.Age == person.Age;
             }
             return false;
         }
+
+        private string describePerson(Person p)
+        {
+            return p.FirstName + " " + p.LastName + ", age: " + p.Age;
+        }
     }
+
 }

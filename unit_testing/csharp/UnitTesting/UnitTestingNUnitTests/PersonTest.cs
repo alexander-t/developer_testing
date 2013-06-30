@@ -28,11 +28,26 @@ namespace UnitTestingNUnitTests
         }
 
         [Test]
-        public void FailingTestWithDirectConstrint()
+        public void FailingTestWithDirectConstraint()
         {
-            var person = new Person { Age = 12};
+            var person = new Person { Age = 12 };
             Assert.That(person, new IsAdultConstraint());
         }
 
+        [Test]
+        public void AllValuesAreCopiedFromPersonDtoToNewEntity()
+        {
+            var personDto = new PersonDTO {
+                FirstName = "Adam",
+                LastName = "Adamsson",
+                Age = 21};
+
+            var expectedPerson = new Person {
+                FirstName = "Adam",
+                LastName = "Adamsson",
+                Age = 21};
+            Assert.That(PersonCreator.CreatePersonEntity(personDto), 
+                new IsSamePersonConstraint(expectedPerson));
+        }
     }
 }
