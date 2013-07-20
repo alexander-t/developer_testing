@@ -43,12 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity.cs" />
     <Compile Include="FirstTest.cs" />
     <Compile Include="FirstTestRefactored.cs" />
     <Compile Include="NaiveWordCounterTest.cs" />
     <Compile Include="NameUtils.cs" />
     <Compile Include="Person.cs" />
+    <Compile Include="PersonCreator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WordCounter.cs" />
   </ItemGroup>

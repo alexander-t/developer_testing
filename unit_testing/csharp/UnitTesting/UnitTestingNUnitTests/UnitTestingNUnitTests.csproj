@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="CustomConstraints\CustomAssertions.cs" />
     <Compile Include="CustomConstraints\IsAdultContraint.cs" />
+    <Compile Include="CustomConstraints\IsSamePersonConstraint.cs" />
     <Compile Include="FluentAssertsTest.cs" />
     <Compile Include="PersonTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

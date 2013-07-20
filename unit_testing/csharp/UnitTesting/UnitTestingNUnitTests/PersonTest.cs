@@ -46,6 +46,7 @@ namespace UnitTestingNUnitTests
                 FirstName = "Adam",
                 LastName = "Adamsson",
                 Age = 21};
+
             Assert.That(PersonCreator.CreatePersonEntity(personDto), 
                 new IsSamePersonConstraint(expectedPerson));
         }
