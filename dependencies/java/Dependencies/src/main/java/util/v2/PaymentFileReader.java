@@ -1,15 +1,12 @@
-package util;
+package util.v2;
 
 import domain.Payment;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-public class PaymentFileReaderV2 {
+public class PaymentFileReader {
 
     public List<Payment> readPaymentFile(PaymentFile paymentFile)
             throws IOException {

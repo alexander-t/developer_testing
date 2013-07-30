@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Payment.cs" />
+    <Compile Include="PaymentHandlerWithTimeSource.cs" />
     <Compile Include="ListWrapperWithFactoryMethod.cs" />
     <Compile Include="ListWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
