@@ -21,7 +21,7 @@ namespace DomainTests
             59, 60, 61, 100, 101};
 
         [Theory]
-        public void PremiumsFactorsAreBetween0_5and2_0(Gender gender, int age)
+        public void PremiumFactorsAreBetween0_5and2_0(Gender gender, int age)
         {
             Assume.That(age, Is.GreaterThanOrEqualTo(18));
             Assume.That(age, Is.LessThanOrEqualTo(100));
