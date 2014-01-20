@@ -1,0 +1,13 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile "junit:junit:4.11"
+    testCompile "org.hsqldb:hsqldb:2.3.1"
+    testCompile 'org.eclipse.jetty:jetty-server:9.0.7.v20131107'
+    testCompile 'org.eclipse.jetty:jetty-webapp:9.0.7.v20131107'
+    testCompile 'net.sourceforge.htmlunit:htmlunit:2.13'
+}
