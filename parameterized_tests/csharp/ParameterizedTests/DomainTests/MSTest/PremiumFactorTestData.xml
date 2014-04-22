@@ -1,0 +1,22 @@
+﻿<Rows>
+  <Row>
+    <Age>18</Age>
+    <Gender>Male</Gender>
+    <PremiumFactor>1.75</PremiumFactor>
+  </Row>
+  <Row>
+    <Age>18</Age>
+    <Gender>Female</Gender>
+    <PremiumFactor>1.575</PremiumFactor>
+  </Row>
+  <Row>
+    <Age>24</Age>
+    <Gender>Male</Gender>
+    <PremiumFactor>1.0</PremiumFactor>
+  </Row>
+  <Row>
+    <Age>24</Age>
+    <Gender>Female</Gender>
+    <PremiumFactor>0.9</PremiumFactor>
+  </Row>
+</Rows>

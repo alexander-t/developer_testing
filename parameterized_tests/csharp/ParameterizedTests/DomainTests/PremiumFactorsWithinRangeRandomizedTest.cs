@@ -12,7 +12,7 @@ namespace DomainTests
     {
         [Test]
         public void PremiumFactorsAreBetween0_5and2_0(
-            [Values(Gender.FEMALE, Gender.MALE)] Gender gender,
+            [Values(Gender.Female, Gender.Male)] Gender gender,
             [Random(18, 100, 100)] int age) 
         {
             double premiumFactor

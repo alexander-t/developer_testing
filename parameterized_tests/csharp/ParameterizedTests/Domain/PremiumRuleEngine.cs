@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public enum Gender { MALE, FEMALE, UNKNOWN}
+    public enum Gender { Male, Female, Unknown}
     
     public class PremiumRuleEngine 
     {
         public double GetPremiumFactor(int age, Gender gender)
         {
             double genderMultiplier = gender
-                    == Gender.FEMALE ? 0.9 : 1;
+                    == Gender.Female ? 0.9 : 1;
             if (age >= 18 && age < 24)
             {
                 return 1.75 * genderMultiplier;
