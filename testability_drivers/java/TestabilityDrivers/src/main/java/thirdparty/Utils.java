@@ -24,4 +24,14 @@ public class Utils {
         }
         return a << shift;
     }
+
+    public void signup(String firstname, String lastname, int age, ... ) {
+        if (age < 1 || age >= 120) {
+            throw new IllegalArgumentException("Invalid age");
+        } else if (age <= 18) {
+            throw new UnderAgedException();
+        }
+
+        // Code that performs the signup
+    }
 }
