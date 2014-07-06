@@ -14,9 +14,9 @@ namespace ProgrammingByContract.CodeContracts
 
         public Time(int hour, int minute)
         {
-            Contract.Requires<ArgumentException>(hour >= 0 && hour <= 23);
+            Contract.Requires<ArgumentException>
+                (hour >= 0 && hour <= 23);
             Contract.Requires(minute >= 0 && minute <= 59);
-
             this.hour = hour;
             this.minute = minute;
         }
