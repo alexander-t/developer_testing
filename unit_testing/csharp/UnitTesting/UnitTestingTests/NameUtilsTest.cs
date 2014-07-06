@@ -26,8 +26,9 @@ namespace UnitTestingTests
 
             var actual = NameUtils.CollectFirstNames(
                 new List<Person>() { adam, bertil, cecil });
-            var expected = adam.FirstName + "," + bertil.FirstName
-                + "," + cecil.FirstName;
+            var expected = adam.FirstName + "," 
+                + bertil.FirstName + "," 
+                + cecil.FirstName;
             //var expected = "Adam,Bertil,Cecil";
             Assert.AreEqual(expected, actual);
         }

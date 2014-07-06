@@ -11,7 +11,8 @@ namespace UnitTestingTests
         public void PersonAged45_IsAnAdult()
         {
             var person = new Person { Age = 45 };
-            Assert.IsTrue(person.Age >= 18 && person.Age < 65);
+            Assert.IsTrue(person.Age >= 18 
+                && person.Age < 65);
         }
     }
 }

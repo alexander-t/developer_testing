@@ -91,7 +91,8 @@ namespace UnitTesting
 
         public void TwoIdenticalAndTwoDifferentWords()
         {
-            wc.Add(new List<string> { "CCC", "AAA", "BBB", "AAA" });
+            wc.Add(new List<string> { "CCC", "AAA", 
+                "BBB", "AAA" });
             if (!new List<string> { "AAA:2", "BBB:1", "CCC:1" }
                 .SequenceEqual(wc.WordCountPairs))
             {

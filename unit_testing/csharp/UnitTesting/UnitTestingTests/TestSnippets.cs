@@ -11,7 +11,8 @@ namespace UnitTestingTests
         public void DemonstrateGuardAssertion()
         {
             var customerAddress = new Address();
-            var orderDetails = new OrderRepository().QueryForOrder(1234567);
+            var orderDetails = new OrderRepository()
+                .QueryForOrder(1234567);
             Assert.IsNotNull(orderDetails);
             Assert.AreEqual(customerAddress.StreetName, orderDetails.ShippingAddress.StreetName);
         }

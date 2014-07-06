@@ -13,7 +13,8 @@ namespace UnitTesting
 
         public static string CollectFirstNames(List<Person> persons)
         {
-            persons.ForEach(p => p.FirstName = p.FirstName.ToUpper());
+            persons.ForEach(p => p.FirstName 
+                = p.FirstName.ToUpper());
             return string.Join(",", persons.Select(p => p.FirstName));
         }
     }

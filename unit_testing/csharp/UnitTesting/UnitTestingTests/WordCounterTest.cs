@@ -15,7 +15,8 @@ namespace UnitTestingTests
             var wc  = new WordCounter();
             
             // Act
-            wc.Add(new List<string> { "CCC", "AAA", "BBB", "AAA" });
+            wc.Add(new List<string> { "CCC", "AAA", 
+                "BBB", "AAA" });
             var countedWords = wc.WordCountPairs.Count;
             
             // Assert

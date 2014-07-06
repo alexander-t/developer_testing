@@ -19,7 +19,8 @@ namespace UnitTestingNUnitTests.CustomConstraints
         {
             if (actual is Person)
             {
-                writer.Write("a person aged " + ((Person)actual).Age);
+                writer.Write("a person aged " 
+                    + ((Person)actual).Age);
             }
             else
             {
@@ -33,7 +34,8 @@ namespace UnitTestingNUnitTests.CustomConstraints
             if (actual is Person)
             {
                 var person = (Person)actual;
-                return person.Age >= 18 && person.Age < 65;
+                return person.Age >= 18 
+                    && person.Age < 65;
             }
             return false;
         }

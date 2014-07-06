@@ -48,7 +48,8 @@ namespace UnitTestingNUnitTests.CustomConstraints
 
         private string describePerson(Person p)
         {
-            return p.FirstName + " " + p.LastName + ", age: " + p.Age;
+            return p.FirstName + " " + p.LastName 
+                + ", age: " + p.Age;
         }
     }
 

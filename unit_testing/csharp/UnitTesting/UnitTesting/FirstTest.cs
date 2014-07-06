@@ -14,7 +14,7 @@ namespace UnitTesting
             try
             {
                 wc.Add(null);
-                Console.WriteLine("Fails for argument null");
+                Console.WriteLine("Fails for null");
             }
             catch (ArgumentNullException e) { }
 
@@ -51,7 +51,8 @@ namespace UnitTesting
             }
 
             wc = new WordCounter();
-            wc.Add(new List<string> { "CCC", "AAA", "BBB", "AAA" });
+            wc.Add(new List<string> { "CCC", "AAA", 
+                "BBB", "AAA" });
             if (!new List<string> { "AAA:2", "BBB:1", "CCC:1" }
                 .SequenceEqual(wc.WordCountPairs))
             {
