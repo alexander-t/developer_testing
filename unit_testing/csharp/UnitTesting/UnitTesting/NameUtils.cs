@@ -15,7 +15,7 @@ namespace UnitTesting
         {
             persons.ForEach(p => p.FirstName 
                 = p.FirstName.ToUpper());
-            return string.Join(",", persons.Select(p => p.FirstName));
+            return String.Join(",", persons.Select(p => p.FirstName));
         }
     }
 }

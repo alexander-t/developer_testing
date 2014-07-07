@@ -11,7 +11,7 @@ namespace UnitTestingTests
         public void SimpleEquals()
         {
             Assert.AreEqual("Hello World",
-                string.Join(" ", new[] { "Hello", "World" }));
+                String.Join(" ", new[] { "Hello", "World" }));
             Assert.AreEqual(3, 1 + 2);
             Assert.AreEqual(3.5, 1.5 + 1.99, 0.01);
         }
