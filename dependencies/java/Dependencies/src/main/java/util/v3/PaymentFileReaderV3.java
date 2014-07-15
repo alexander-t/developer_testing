@@ -22,7 +22,8 @@ public class PaymentFileReaderV3 {
 
     List<Payment> readFileContents(InputStream inputStream)
             throws IOException {
-        List<Payment> parsedPayments = new ArrayList<Payment>();
+        List<Payment> parsedPayments
+                = new ArrayList<Payment>();
         BufferedReader reader
                 = new BufferedReader(
                 new InputStreamReader(inputStream));
