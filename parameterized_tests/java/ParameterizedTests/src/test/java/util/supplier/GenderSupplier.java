@@ -13,7 +13,8 @@ import static org.junit.experimental.theories.PotentialAssignment.forValue;
 public class GenderSupplier extends ParameterSupplier {
     @Override
     public List<PotentialAssignment> getValueSources(ParameterSignature sig) {
-        return Arrays.asList(forValue("gender", Gender.MALE),
+        return Arrays.asList(
+                forValue("gender", Gender.MALE),
                 forValue("gender", Gender.FEMALE),
                 forValue("gender", Gender.UNKNOWN));
     }

@@ -1,6 +1,5 @@
 package domain;
 
-import org.junit.experimental.theories.DataPoints;
 import org.junit.experimental.theories.Theories;
 import org.junit.experimental.theories.Theory;
 import org.junit.experimental.theories.suppliers.TestedOn;
@@ -20,9 +19,11 @@ import static org.junit.Assume.assumeThat;
 public class PremiumFactorsWithinRangeTestUsingTestedOn {
 
     @Theory
-    public void premiumFactorsAreBetween0_5and2_0(@AllGenders Gender gender,
-                                                  @TestedOn(ints = {17, 18, 19, 23, 24, 25,
-                                                          59, 60, 61, 100, 101}) int age) {
+    public void premiumFactorsAreBetween0_5and2_0(
+            @AllGenders Gender gender,
+            @TestedOn(ints = {17, 18, 19, 23, 24, 25,
+                    59, 60, 61, 100, 101}) int age) {
+
         assumeThat(age, greaterThanOrEqualTo(18));
         assumeThat(age, lessThanOrEqualTo(100));
         assumeThat(gender, isOneOf(Gender.FEMALE, Gender.MALE));
@@ -30,6 +31,7 @@ public class PremiumFactorsWithinRangeTestUsingTestedOn {
         double premiumFactor
                 = new PremiumRuleEngine().getPremiumFactor(age, gender);
         assertThat(premiumFactor,
-                is(both(greaterThan(0.5)).and(lessThan(2.0))));
+                is(both(greaterThan(0.5))
+                        .and(lessThan(2.0))));
     }
 }

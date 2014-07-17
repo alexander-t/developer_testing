@@ -25,10 +25,12 @@ namespace DomainTests
         {
             Assume.That(age, Is.GreaterThanOrEqualTo(18));
             Assume.That(age, Is.LessThanOrEqualTo(100));
-            Assume.That(gender == Gender.Female || gender == Gender.Male);
-            double premiumFactor
-                    = new PremiumRuleEngine().GetPremiumFactor(age, gender);
-            Assert.That(premiumFactor, Is.InRange(0.5, 2.0));
+            Assume.That(gender == Gender.Female
+                || gender == Gender.Male);
+            var premiumFactor = new PremiumRuleEngine()
+                .GetPremiumFactor(age, gender);
+            Assert.That(premiumFactor, 
+                Is.InRange(0.5, 2.0));
         }
     }
 }

@@ -35,5 +35,46 @@ namespace DomainTests.MSTest
         {
             return new PremiumRuleEngine().GetPremiumFactor(age, gender);
         }
+
+        [TestMethod]
+        public void Ter() { 
+            Assert.IsTrue(new List<int> { 1, 2, 3, 4, 4 }.SequenceEqual(new IntegerListBuilder().StartingAt(1).EndingWith(5).Build()));
+        }
     }
+
+    public class ListWrapper
+    {
+        private IList<int> wrapped;
+        public int WrappedListSize
+        {
+            get { return wrapped.Count; }
+        }
+        public ListWrapper(IntegerListBuilder builder)
+        {
+            wrapped = builder.Build();
+        }
+    }
+
+    public class IntegerListBuilder
+    {
+        private int startingAt = 0;
+        private int endingWith = 10;
+        public IntegerListBuilder StartingAt(int startingAt)
+        {
+            this.startingAt = startingAt;
+            return this;
+        }
+        
+        public IntegerListBuilder EndingWith(int endingWith)
+        {
+            this.endingWith = endingWith;
+            return this;
+        }
+        
+        public IList<int> Build()
+        { 
+            return Enumerable.Range(startingAt, endingWith).ToList();
+        }
+    }
+
 }
