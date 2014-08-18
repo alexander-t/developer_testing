@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,12 @@ namespace Duplication.Util
                 throw new ArgumentException("Incomparable dates");
             }
             return (t2.Hour * 60 + t2.Minute) - (t1.Hour * 60 + t1.Minute);
+        }
+        public int mamma() {
+            using (StreamReader sr = new StreamReader("TestFile.txt"))
+            {
+                return int.TryParse(sr.ReadToEnd());
+            }
         }
     }
 }
