@@ -13,5 +13,4 @@ public class Time {
         this.minute = minute;
     }
 
-
 }
