@@ -1,6 +1,6 @@
 package util;
 
-public class AddresParser {
+public class AddressParser {
     public void parse(String streetName, int misspellings) {
 
     }

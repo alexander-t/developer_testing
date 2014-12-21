@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class AddressParserTest {
 
-    private AddresParser addressParser = new AddresParser();
+    private AddressParser addressParser = new AddressParser();
 
     /*
     @Test
@@ -16,8 +16,8 @@ public class AddressParserTest {
     @Test
     public void parse_simpleMisspellingsAreTolerated() {
         String misspelledStreet = "Sesame streat";
-        int toleratedNumberOffErrors = 1;
+        int toleratedNumberOfErrors = 1;
         addressParser.parse(misspelledStreet,
-                toleratedNumberOffErrors);
+                toleratedNumberOfErrors);
     }
 }
