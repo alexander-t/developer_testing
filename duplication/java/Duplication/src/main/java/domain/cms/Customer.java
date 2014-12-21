@@ -1,5 +1,7 @@
 package domain.cms;
 
+import org.joda.time.LocalDate;
+
 /**
  * A typical representation of a customer found in many systems out there.
  */
@@ -8,7 +10,7 @@ public class Customer {
     private final String lastName;
 
     private Gender gender;
-    private Integer yearOfBirth;
+    private LocalDate dateOfBirth;
 
     public Customer(String firstName, String lastName) {
         this.firstName = firstName;
@@ -23,11 +25,11 @@ public class Customer {
         this.gender = gender;
     }
 
-    public Integer getYearOfBirth() {
-        return yearOfBirth;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setYearOfBirth(Integer yearOfBirth) {
-        this.yearOfBirth = yearOfBirth;
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 }

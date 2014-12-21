@@ -2,21 +2,24 @@ package repository;
 
 import domain.cms.Customer;
 import domain.cms.Gender;
-
-import java.util.Calendar;
+import org.joda.time.LocalDate;
+import org.joda.time.Period;
+import org.joda.time.PeriodType;
 
 public class CustomerRepository {
 
     // Mimic a legacy create method
     public void create(Customer customer) {
         if (customer.getGender() == Gender.UNKNOWN
-                || customer.getYearOfBirth() == null) {
-            throw new IllegalArgumentException("Incomplete customer");
+                || customer.getDateOfBirth() == null) {
+            throw new IllegalArgumentException("Incomplete customer: " + customer);
         }
 
-        if (Calendar.getInstance().get(Calendar.YEAR)
-                - customer.getYearOfBirth() < 18) {
-            throw new IllegalArgumentException("Underage customer");
+        LocalDate now = new LocalDate();
+        Period period = new Period(customer.getDateOfBirth(),
+                now, PeriodType.yearMonthDay());
+        if (period.getYears() < 18) {
+            throw new IllegalArgumentException("Underage customer: " + customer);
         }
 
         // Equally scary logic for saving would go here...
@@ -26,13 +29,16 @@ public class CustomerRepository {
     // Mimic a legacy update method
     public void update(Customer customer) {
         if (customer.getGender() == Gender.UNKNOWN
-                || customer.getYearOfBirth() == null) {
-            throw new IllegalArgumentException("Incomplete customer");
+                || customer.getDateOfBirth() == null) {
+            throw new IllegalArgumentException("Incomplete customer: " + customer);
         }
 
-        if (Calendar.getInstance().get(Calendar.YEAR)
-                - customer.getYearOfBirth() < 18) {
-            throw new IllegalArgumentException("Underage customer");
+        LocalDate now = new LocalDate();
+        Period period
+                = new Period(customer.getDateOfBirth(),
+                now, PeriodType.yearMonthDay());
+        if (period.getYears() < 18) {
+            throw new IllegalArgumentException("Underage customer: " + customer);
         }
     }
 }

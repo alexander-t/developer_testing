@@ -10,14 +10,16 @@ import java.util.Date;
 public class DateUtils {
     public static long diffTime(Date t1, Date t2) {
         if (t1.getDate() != t2.getDate()) {
-            throw new IllegalArgumentException("Incomparable dates");
+            throw new IllegalArgumentException(
+                    "Dates must be equal for comparison to work");
         }
         return (t2.getHours() - t1.getHours()) * 60;
     }
 
     public static long diffTime_revised(Date t1, Date t2) {
         if (t1.getDate() != t2.getDate()) {
-            throw new IllegalArgumentException("Incomparable dates");
+            throw new IllegalArgumentException(
+                    "Dates must be equal for comparison to work");
         }
         return (t2.getHours() * 60 + t2.getMinutes())
                 - (t1.getHours() * 60 + t1.getMinutes());
@@ -28,7 +30,7 @@ public class DateUtils {
 
         Calendar c2 = Calendar.getInstance();
         c2.add(Calendar.HOUR, 1);
-       c2.add(Calendar.MINUTE, 27);
+        c2.add(Calendar.MINUTE, 27);
         System.err.println(diffTime(d1, c2.getTime()));
     }
 }
