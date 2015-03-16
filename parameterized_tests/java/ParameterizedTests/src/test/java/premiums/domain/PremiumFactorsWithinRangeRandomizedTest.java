@@ -1,10 +1,8 @@
-package domain;
+package premiums.domain;
 
 import net.java.quickcheck.Generator;
 import net.java.quickcheck.generator.distribution.Distribution;
 import org.junit.Test;
-import org.junit.experimental.theories.Theories;
-import org.junit.runner.RunWith;
 
 import static net.java.quickcheck.generator.PrimitiveGenerators.enumValues;
 import static net.java.quickcheck.generator.PrimitiveGenerators.integers;

@@ -1,4 +1,4 @@
-package domain;
+package premiums.domain;
 
 import org.junit.experimental.theories.DataPoints;
 import org.junit.experimental.theories.Theories;

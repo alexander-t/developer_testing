@@ -1,6 +1,6 @@
-package util.supplier;
+package premiums.supplier;
 
-import domain.Gender;
+import premiums.domain.Gender;
 import org.junit.experimental.theories.ParameterSignature;
 import org.junit.experimental.theories.ParameterSupplier;
 import org.junit.experimental.theories.PotentialAssignment;

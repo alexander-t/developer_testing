@@ -1,4 +1,4 @@
-package domain;
+package premiums.domain;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,9 +13,9 @@ import static org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class PremiumAgeIntervalsTestV3 {
 
-    double expectedPremiumFactor;
-    int age;
-    Gender gender;
+    private double expectedPremiumFactor;
+    private int age;
+    private Gender gender;
 
     public PremiumAgeIntervalsTestV3(double epf,
                                      int age,
@@ -43,7 +43,9 @@ public class PremiumAgeIntervalsTestV3 {
 
     @Test
     public void verifyPremiumFactor() {
-        assertEquals(expectedPremiumFactor, new PremiumRuleEngine()
-                .getPremiumFactor(age, gender), 0.0);
+        assertEquals(expectedPremiumFactor,
+                new PremiumRuleEngine()
+                        .getPremiumFactor(age, gender)
+                , 0.0);
     }
 }

@@ -1,4 +1,4 @@
-package util.supplier;
+package premiums.supplier;
 
 import org.junit.experimental.theories.ParametersSuppliedBy;
 

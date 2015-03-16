@@ -1,4 +1,4 @@
-package domain;
+package premiums.domain;
 
 public class PremiumRuleEngine {
     public double getPremiumFactor(int age, Gender gender) {

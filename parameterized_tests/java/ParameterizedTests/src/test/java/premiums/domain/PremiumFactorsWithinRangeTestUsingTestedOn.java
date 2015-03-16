@@ -1,10 +1,10 @@
-package domain;
+package premiums.domain;
 
 import org.junit.experimental.theories.Theories;
 import org.junit.experimental.theories.Theory;
 import org.junit.experimental.theories.suppliers.TestedOn;
 import org.junit.runner.RunWith;
-import util.supplier.AllGenders;
+import premiums.supplier.AllGenders;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
