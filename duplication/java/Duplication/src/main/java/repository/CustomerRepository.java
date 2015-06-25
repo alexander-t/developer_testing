@@ -12,17 +12,19 @@ public class CustomerRepository {
     public void create(Customer customer) {
         if (customer.getGender() == Gender.UNKNOWN
                 || customer.getDateOfBirth() == null) {
-            throw new IllegalArgumentException("Incomplete customer: " + customer);
+            throw new IllegalArgumentException(customer
+                    + " not fully initialized");
         }
 
         LocalDate now = new LocalDate();
         Period period = new Period(customer.getDateOfBirth(),
                 now, PeriodType.yearMonthDay());
         if (period.getYears() < 18) {
-            throw new IllegalArgumentException("Underage customer: " + customer);
+            throw new IllegalArgumentException(customer
+                    + " is underage");
         }
 
-        // Equally scary logic for saving would go here...
+        // Equally scary logic for saving would go here ...
 
     }
 
@@ -30,7 +32,8 @@ public class CustomerRepository {
     public void update(Customer customer) {
         if (customer.getGender() == Gender.UNKNOWN
                 || customer.getDateOfBirth() == null) {
-            throw new IllegalArgumentException("Incomplete customer: " + customer);
+            throw new IllegalArgumentException(customer
+                    + " not fully initialized");
         }
 
         LocalDate now = new LocalDate();
@@ -38,7 +41,8 @@ public class CustomerRepository {
                 = new Period(customer.getDateOfBirth(),
                 now, PeriodType.yearMonthDay());
         if (period.getYears() < 18) {
-            throw new IllegalArgumentException("Underage customer: " + customer);
+            throw new IllegalArgumentException(customer
+                    + " is underage");
         }
     }
 }
