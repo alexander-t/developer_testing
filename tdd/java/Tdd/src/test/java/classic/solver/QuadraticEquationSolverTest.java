@@ -1,7 +1,5 @@
 package classic.solver;
 
-import classic.solver.QuadraticEquationSolver;
-import classic.solver.Roots;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

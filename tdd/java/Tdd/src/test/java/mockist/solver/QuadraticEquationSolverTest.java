@@ -13,8 +13,8 @@ public class QuadraticEquationSolverTest {
 
         QuadraticEquationSolver solver
                 = new QuadraticEquationSolver(parserStub, solverMock);
-        final ParsedQuadraticEquation equation
-                = new ParsedQuadraticEquation(0, 0, 0);
+        final QuadraticEquation equation
+                = new QuadraticEquation(0, 0, 0);
         when(parserStub.parse("x^2=0")).thenReturn(equation);
 
         solver.solve("x^2=0");

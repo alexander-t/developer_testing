@@ -12,7 +12,8 @@ public class QuadraticEquationSolver {
     }
 
     private static Roots computeByQuadraticFormula(double b, double c) {
-        return new Roots((-b / 2) + Math.sqrt((b * b / 4) - c),
+        return new Roots((-b / 2)
+                + Math.sqrt((b * b / 4) - c),
                 (-b / 2) - Math.sqrt((b * b / 4) - c));
     }
 
