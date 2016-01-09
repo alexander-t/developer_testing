@@ -5,9 +5,11 @@ repositories {
 }
 
 dependencies {
+    compile 'org.springframework:spring-context:4.2.2.RELEASE'
     runtime 'org.hsqldb:hsqldb:2.3.3'
-    testCompile 'org.springframework:spring-jdbc:4.2.2.RELEASE'
-    testCompile 'org.springframework:spring-context:4.2.2.RELEASE'
+    compile 'org.springframework:spring-jdbc:4.2.2.RELEASE'
+    compile 'commons-codec:commons-codec:1.9'
     testCompile 'org.springframework:spring-test:4.2.2.RELEASE'
 	testCompile 'junit:junit:4.11'
+    testCompile 'org.exparity:hamcrest-date:1+'
 }
