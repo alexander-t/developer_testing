@@ -30,7 +30,7 @@ public class MockitoSyntaxTest {
     }
 
     @Test
-    public void demonstrateConsequtiveStubbing() {
+    public void demonstrateConsecutiveStubbing() {
         Dependency dependencyStub = mock(Dependency.class);
         when(dependencyStub.computeAndReturnValue(42))
                 .thenReturn(10).thenReturn(99);
