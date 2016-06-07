@@ -1,4 +1,4 @@
-package types;
+package stubbing;
 
 import org.junit.Ignore;
 import org.junit.Test;

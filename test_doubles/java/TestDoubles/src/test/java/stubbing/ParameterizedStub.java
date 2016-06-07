@@ -1,4 +1,4 @@
-package types;
+package stubbing;
 
 public class ParameterizedStub implements Collaborator {
 

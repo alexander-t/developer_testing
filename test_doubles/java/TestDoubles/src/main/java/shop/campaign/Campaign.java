@@ -1,6 +1,7 @@
-package domain;
+package shop.campaign;
 
-public interface DiscountLogic
-{
+import shop.purchase.Purchase;
+
+public interface Campaign {
     void applyDiscount(long customerNumber, String discountCode, Purchase purchase);
 }

@@ -1,4 +1,4 @@
-package types;
+package stubbing;
 
 import java.time.LocalTime;
 
