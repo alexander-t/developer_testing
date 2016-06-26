@@ -1,10 +1,8 @@
 package syntax;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -35,5 +33,14 @@ public class MockitoSyntaxTest {
 
         assertEquals(10, dependencyStub.computeAndReturnValue(42));
         assertEquals(99, dependencyStub.computeAndReturnValue(42));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void demonstrateThrowingExceptions() {
+        Dependency dependencyStub
+                = when(mock(Dependency.class).computeAndReturnValue(42))
+                .thenThrow(new IllegalArgumentException("42 isn't the answer!"))
+                .getMock();
+        dependencyStub.computeAndReturnValue(42);
     }
 }
