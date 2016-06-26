@@ -22,4 +22,18 @@ class SpockSyntaxTest extends Specification {
         dependencyStub.computeAndReturnValue(10) == 21
         dependencyStub.computeAndReturnValue(10) == 45
     }
+
+    def "Demonstrate throwing an exception"() {
+        given:
+        def dependencyStub = Stub(Dependency)
+        dependencyStub.computeAndReturnValue(42) >>
+                { throw new IllegalArgumentException("42 isn't the answer!") }
+
+        when:
+        dependencyStub.computeAndReturnValue(42)
+
+        then:
+        thrown IllegalArgumentException
+
+    }
 }
