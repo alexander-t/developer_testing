@@ -31,8 +31,7 @@ public class WebApplicationIsUpBastardTest {
         HtmlPage mainPage = new WebClient()
                 .getPage("http://localhost:8080/webapp");
 
-        assertEquals("Fancy application",
-                mainPage.getTitleText());
+        assertEquals("Fancy application", mainPage.getTitleText());
     }
 
     @AfterClass
