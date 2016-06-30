@@ -50,10 +50,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ListWrapperTest.cs" />
-    <Compile Include="ListWrapperWithFactoryMethodTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ComputerTest.cs" />
+    <Compile Include="RaffleTest.cs" />
+    <Compile Include="RaffleWithFactoryTest.cs" />
+    <Compile Include="RaffleWithBuilderTest.cs" />
+    <Compile Include="RaffleWithConstructorInjectionTest.cs" />
+    <Compile Include="RaffleWithFactoryMethodTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dependencies\Dependencies.csproj">

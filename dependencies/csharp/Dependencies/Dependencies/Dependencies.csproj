@@ -42,10 +42,12 @@
     <Compile Include="Computer.cs" />
     <Compile Include="Domain\Payment.cs" />
     <Compile Include="PaymentHandlerWithTimeSource.cs" />
-    <Compile Include="ListWrapperWithFactoryMethod.cs" />
-    <Compile Include="ListWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PaymentHandler.cs" />
+    <Compile Include="Raffle.cs" />
+    <Compile Include="RaffleWithFactoryMethod.cs" />
+    <Compile Include="TicketsBuilder.cs" />
+    <Compile Include="TicketsFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

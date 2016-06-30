@@ -5,15 +5,15 @@ using Dependencies;
 namespace DependenciesTests
 {
     [TestClass]
-    public class ListWrapperTest
+    public class RaffleTest
     {
         [TestMethod]
-        public void TryTestingTheSizeOfAWrappedList()
+        public void TryObtainingTheNumberOfTicketsInTheRaffle()
         {
-            var testedListWrapper = new ListWrapper();
+            var testedRaffle = new Raffle();
 
             // Fail :(
-            Assert.AreEqual(3, testedListWrapper.WrappedListSize);
+            Assert.AreEqual(3, testedRaffle.TicketCount);
         }
     }
 }
